@@ -28,3 +28,14 @@ export const registerMember = async(input)=>{
   throw error;
     }
 }
+
+export const getAllMembers = async()=>{
+    try {
+        const result = await sqlQuery `SELECT * FROM "member"`;
+        return result;
+    }
+    catch (error) {
+        console.error("DB Error:", error);
+        throw error;
+    }
+}

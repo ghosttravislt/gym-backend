@@ -26,3 +26,13 @@ export const membership = async (input)=>{
 
 
 }
+
+export const getAllMemberships = async()=>{
+    try {
+        const result = await sqlQuery `SELECT * FROM "membership"`;
+    return result;}
+    catch (error) {
+        console.error("DB Error:", error);
+        throw error;
+    }
+}

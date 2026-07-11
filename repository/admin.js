@@ -19,3 +19,14 @@ export const resgisterAdamin = async (input)=>{
   throw error;
     }
    }
+
+   export const getAllAdmins = async()=>{
+    try {
+        const result = await sqlQuery `SELECT * FROM "admin"`;
+        return result;}
+        catch{
+          console.error("DB Error:", error);
+        throw error;
+        }
+      
+  }

@@ -11,9 +11,12 @@ const app = express()
     //   routing
 
     app.use("/api/member/register",memberRoute)
+    app.use("/gym/member",memberRoute)
     app.use("/api/admin/register",adminRoute)
+    app.use("/gym/admin",adminRoute)
     app.use("/api/branch/add",addBranchRoute)
     app.use("/api/membership/register",membershipRoute)
+    app.use("/gym/membership",membershipRoute)
     app.use("/api/payment",paymentRoute)
 
       

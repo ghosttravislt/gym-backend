@@ -5,18 +5,20 @@ export const addBranchRoute = express.Router()
 export const membershipRoute = express.Router()
 export const paymentRoute = express.Router()
 
-import { memberController } from "../controller/memberCont.js"
+import { memberController,getAllMembersCont } from "../controller/memberCont.js"
 
-memberRoute.post("/",memberController)
+memberRoute.post("/",memberController);
+memberRoute.get("/",getAllMembersCont);
 
 
 
 
 //  Admin routes 
 
-import { adminController } from "../controller/adminCont.js"
+import { adminController, getAllAdminsCont} from "../controller/adminCont.js"
 
 adminRoute.post("/",adminController)
+adminRoute.get("/",getAllAdminsCont)
 
 
 
@@ -27,8 +29,9 @@ addBranchRoute.post("/",addBranchController)
 
 // membership routes
 
-import { membershipController } from "../controller/membershipCont.js"
-membershipRoute.post("/",memberController)
+import { membershipController, getAllMembershipsCont } from "../controller/membershipCont.js"
+membershipRoute.post("/",membershipController)
+membershipRoute.get("/",getAllMembershipsCont)
 
 // payment routes
 import { paymentController } from "../controller/paymentCont.js"
